@@ -1,14 +1,14 @@
-import Tasks from "./components/Tasks";
-import "./App.css";
+import "./App.css"
+import Sidebar from "./components/Sidebar"
 
 function App() {
   return (
     <>
       <div>
-        <Tasks />
+        <Sidebar />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
