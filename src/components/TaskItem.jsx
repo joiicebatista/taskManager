@@ -1,20 +1,42 @@
+import CheckIcon from "../assets/icons/check.svg?react"
+import LoaderCircleIcon from "../assets/icons/loader-circle.svg?react"
+import DetailsIcon from "../assets/icons/details.svg?react"
+
 const TaskItem = ({ task }) => {
   const getStatusVariant = () => {
     if (task.status === "done") {
-      return "bg-[#00ADB51A] bg-opacity-10 text-[#002C2E]"
+      return "bg-[#00ADB5] text-[#002C2E]"
     }
     if (task.status === "in_progress") {
-      return "bg-[#FFAA041A] bg-opacity-10 text-[#FFAA04]"
+      return "bg-[#FFAA04] text-[#FFAA04]"
     }
     if (task.status === "not_started") {
-      return "bg-[#35383E0D] bg-opacity-5 text-[#35383E]"
+      return "bg-[#35383E] text-[#35383E] bg-opacity-10"
     }
   }
   return (
     <div
-      className={`flex justify-between gap-3 rounded-lg px-4 py-3 text-sm ${getStatusVariant()}`}
+      className={`flex items-center justify-between gap-3 rounded-lg bg-opacity-10 px-4 py-3 text-sm ${getStatusVariant()}`}
     >
-      {task.title}
+      <div className="flex items-center gap-2">
+        <label
+          className={`relative flex h-6 w-6 cursor-pointer items-center justify-center rounded-lg ${getStatusVariant()}`}
+        >
+          <input
+            type="checkbox"
+            className="absolute h-full w-full cursor-pointer opacity-0"
+            checked={task.status === "done"}
+          />
+          {task.status === "done" && <CheckIcon />}
+          {task.status === "in_progress" && (
+            <LoaderCircleIcon className="animate-spin" />
+          )}
+        </label>
+        {task.title}
+      </div>
+      <a href="/">
+        <DetailsIcon></DetailsIcon>
+      </a>
     </div>
   )
 }
