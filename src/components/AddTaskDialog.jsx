@@ -17,7 +17,7 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
   useEffect(() => {
     if (!isOpen) {
       setTitle("")
-      setTime("")
+      setTime("morning")
       setDescription("")
     }
   }, [isOpen])
@@ -111,7 +111,6 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                 </div>
               </div>
             </div>
-            {/* </div> */}
           </div>,
           document.body
         )}
