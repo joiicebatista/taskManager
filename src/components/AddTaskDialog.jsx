@@ -10,22 +10,24 @@ import Input from "./Input"
 
 const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
   const [time, setTime] = useState("morning")
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
+
   const [errors, setErrors] = useState([])
 
   const nodeRef = useRef()
+  const titleRef = useRef()
+  const descriptionRef = useRef()
 
   useEffect(() => {
     if (!isOpen) {
-      setTitle("")
       setTime("morning")
-      setDescription("")
     }
   }, [isOpen])
 
   const handleSaveClick = () => {
     const newErrors = []
+    const title = titleRef.current.value
+    const description = descriptionRef.current.value
+
     if (!title.trim()) {
       newErrors.push({
         inputName: "title",
@@ -91,8 +93,7 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                   id="title"
                   label="Título"
                   placeholder="Insira o título da tarefa"
-                  value={title}
-                  onChange={(event) => setTitle(event.target.value)}
+                  ref={titleRef}
                   errorMessage={titleError?.message}
                 ></Input>
 
@@ -118,8 +119,7 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                 <Input
                   id="description"
                   label="Descrição"
-                  value={description}
-                  onChange={(event) => setDescription(event.target.value)}
+                  ref={descriptionRef}
                   placeholder="Descreva a tarefa"
                   errorMessage={descriptionError?.message}
                 ></Input>
