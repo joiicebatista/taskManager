@@ -5,12 +5,12 @@ const Input = forwardRef(({ label, errorMessage, ...rest }, ref) => {
     <div className="flex flex-col space-y-1">
       <label
         htmlFor={rest.id}
-        className="text-left text-sm font-semibold text-[#35383E]"
+        className="text-dark-blue text-left text-sm font-semibold"
       >
         {label}
       </label>
       <input
-        className="rounded-lg border border-solid border-[#ECECEC] px-4 py-3 outline-[#00ADB5] placeholder:text-sm placeholder:text-[#9A9C9F]"
+        className="outline-primary placeholder:text-text-gray rounded-lg border border-solid border-[#ECECEC] px-4 py-3 placeholder:text-sm"
         ref={ref}
         {...rest}
       />

@@ -80,12 +80,12 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
             ref={nodeRef}
             className="fixed bottom-0 left-0 top-0 flex h-screen w-screen items-center justify-center bg-[#09090B1F]"
           >
-            <div className="gap-4 rounded-xl bg-[#FFFFFF] p-5 text-center">
+            <div className="gap-4 rounded-xl bg-white p-5 text-center">
               {/* <div className="items-center gap-4"> */}
-              <h2 className="text-xl font-semibold text-[#35383E]">
+              <h2 className="text-dark-blue text-xl font-semibold">
                 Nova Tarefa
               </h2>
-              <p className="mb-4 mt-1 text-sm font-normal text-[#9A9C9F]">
+              <p className="text-text-gray mb-4 mt-1 text-sm font-normal">
                 Insira as informações abaixo
               </p>
               <div className="flex w-[336px] flex-col space-y-4">
@@ -100,12 +100,12 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                 <div className="flex flex-col gap-1 text-left">
                   <label
                     htmlFor="time"
-                    className="text-left text-sm font-semibold text-[#35383E]"
+                    className="text-dark-blue text-left text-sm font-semibold"
                   >
                     Horário
                   </label>
                   <select
-                    className="rounded-lg border border-solid border-[#ECECEC] px-4 py-3 outline-[#00ADB5] placeholder:text-sm placeholder:text-[#9A9C9F]"
+                    className="outline-[# placeholder:text-text-gray rounded-lg border border-solid border-[#ECECEC] px-4 py-3 placeholder:text-sm"
                     name=""
                     id="time"
                     value={time}

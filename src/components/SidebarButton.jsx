@@ -3,10 +3,10 @@ import { Children } from "react"
 const SidebarButton = ({ children, variant }) => {
   const getVariantClasses = () => {
     if (variant === "unselected") {
-      return "text-[#35383E]"
+      return "text-dark-blue"
     }
     if (variant === "selected") {
-      return " bg-[#E6F7F8] text-[#00ADB5]"
+      return " bg-[#E6F7F8] text-primary"
     }
   }
   return (
